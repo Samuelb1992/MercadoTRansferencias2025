@@ -21,11 +21,11 @@ jobs:
         
       - name: Install Packages
         run: |
-          Rscript -e "install.packages(c("tidyverse","devtools"))"
+          Rscript -e "install.packages(c('tidyverse','devtools'))"
           
       - name: Install from Github
         run: |
-          Rscript -e "devtools::install_github("JaseZiv/worldfootballR")"
+          Rscript -e "devtools::install_github('JaseZiv/worldfootballR')"
           
       - name: Run Script ETL Valor de Mercado
         run: Rscript ETL_00_ValorMercado.R
