@@ -21,8 +21,8 @@ jobs:
         
       - name: Install Packages
         run: |
-          Rscript -e "install.packages('renv')"
-          Rscript -e "renv::restore()"
+          Rscript -e "install.packages('tidyverse','devtools')"
+          Rscript -e "devtools::install_github("JaseZiv/worldfootballR")"
           
       - name: Run Script ETL Valor de Mercado
         run: Rscript ETL_00_ValorMercado.R

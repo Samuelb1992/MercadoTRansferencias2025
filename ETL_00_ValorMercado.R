@@ -3,7 +3,6 @@
 
 library(tidyverse)
 library(worldfootballR)
-library(tictoc)
 
 # Parametros --------------------------------------------------------------
 
