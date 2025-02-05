@@ -21,6 +21,8 @@ jobs:
         
             
       - name: Install worldfootballR
+        env:
+          GITHUB_PAT: ${{ secrets.R_GITHUB_PAT }}
         run: |
           Rscript -e "install.packages('remotes')"
           Rscript -e "remotes::install_github('JaseZiv/worldfootballR')"
