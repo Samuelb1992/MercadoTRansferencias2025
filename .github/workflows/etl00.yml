@@ -21,11 +21,8 @@ jobs:
         
       - name: Install dependencies
         run: |
-          install.packages("tidyverse", repos = "https://cloud.r-project.org/")
-          install.packages("devtools", repos = "https://cloud.r-project.org/")
-          devtools::install_github("JaseZiv/worldfootballR")
-        shell: Rscript {0}
-          
+          R -e "install.packages(c('tidyverse', 'devtools'), repos = 'https://cloud.r-project.org/')"
+          R -e "library(devtools); devtools::install_github('JaseZiv/worldfootballR')"
           
       - name: Run Script ETL Valor de Mercado
         run: Rscript ETL_00_ValorMercado.R
