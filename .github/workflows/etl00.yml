@@ -23,13 +23,14 @@ jobs:
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
           packages: |
-            any::tidyverse
             any::devtools
             
-      - name: Install package from GitHub
+      - name: Install worldfootballR
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
         run: |
           Rscript -e "devtools::install_github('JaseZiv/worldfootballR')"
-      
+            
           
       - name: Run Script ETL Valor de Mercado
         run: Rscript ETL_00_ValorMercado.R
