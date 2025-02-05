@@ -1,4 +1,6 @@
 
+devtools::install_github("JaseZiv/worldfootballR")
+
 # Librerias ---------------------------------------------------------------
 
 library(tidyverse)
