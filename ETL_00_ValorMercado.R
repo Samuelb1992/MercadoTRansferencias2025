@@ -88,7 +88,7 @@ equipos.latam <- read.csv("equipos_latam.csv")
 # Valor de Mercado Actual -------------------------------------------------
 
 
-valor.mercado.equipos <- lapply(url.ligas.final$comp_url[4:5], function(x) {
+valor.mercado.equipos <- lapply(url.ligas.final$comp_url[1:2], function(x) {
   tryCatch(
     {
       tm_player_market_values(
