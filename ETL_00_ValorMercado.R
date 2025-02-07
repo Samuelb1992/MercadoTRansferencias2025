@@ -108,6 +108,24 @@ valor.mercado.equipos <- lapply(url.ligas.final$comp_url[1:2], function(x) {
 
 valor.mercado.final <- bind_rows(valor.mercado.equipos)
 
+
+# Mover Archivos Historicos -----------------------------------------------
+
+c_origen <- "data"
+c_destino <- "data/historical"
+
+# Archivos
+a.historicos <- list.files(c_origen, full.names = TRUE)
+# Filtramos Carpetas
+a.historicos <- a.historicos[!file.info(a.historicos)$isdir]  
+
+# Cambiamos la ruta y hacemos unlink para eliminar ruta original
+file.copy(a.historicos, file.path(c_destino, basename(a.historicos)))
+unlink(a.historicos)
+
+
+# Crear archivo con datos actualizados ------------------------------------
+
 write.csv(valor.mercado.final, paste0("data/",fecha_generacion,"_valor_mercado.csv"), row.names = F)
 
 print("Proceso Completado")
